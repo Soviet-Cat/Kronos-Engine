@@ -1,0 +1,6 @@
+#ifndef KRONOS_ENGINE_LIBRARY_H
+#define KRONOS_ENGINE_LIBRARY_H
+
+void hello();
+
+#endif //KRONOS_ENGINE_LIBRARY_H
