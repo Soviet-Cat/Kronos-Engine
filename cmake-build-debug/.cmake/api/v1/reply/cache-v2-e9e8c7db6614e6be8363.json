@@ -903,7 +903,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "Kronos_Engine"
+			"value" : "KronosEngine"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1296,6 +1296,42 @@
 			],
 			"type" : "BOOL",
 			"value" : "FALSE"
+		},
+		{
+			"name" : "KronosEngine_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "E:/GitHub/Kronos Engine/cmake-build-debug"
+		},
+		{
+			"name" : "KronosEngine_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "KronosEngine_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "E:/GitHub/Kronos Engine"
 		},
 		{
 			"name" : "Kronos_Engine_BINARY_DIR",
