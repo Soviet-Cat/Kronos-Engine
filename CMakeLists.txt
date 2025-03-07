@@ -28,3 +28,11 @@ set_target_properties(CoreSystems PROPERTIES
 target_include_directories(CoreSystems PUBLIC
         "${INCLUDE_DIR}/core/math" # math
 )
+
+# create core library tests
+add_executable(CoreSystemsMathTest "${TEST_DIR}/core/math.cpp")
+set_target_properties(CoreSystemsMathTest PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
+)
+target_include_directories(CoreSystemsMathTest PUBLIC "${INCLUDE_DIR}/core/math")
+target_link_libraries(CoreSystemsMathTest CoreSystems)

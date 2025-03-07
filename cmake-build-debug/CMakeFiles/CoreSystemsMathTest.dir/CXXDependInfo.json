@@ -1,0 +1,30 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "E:/GitHub/Kronos Engine/cmake-build-debug",
+	"dir-cur-src" : "E:/GitHub/Kronos Engine",
+	"dir-top-bld" : "E:/GitHub/Kronos Engine/cmake-build-debug",
+	"dir-top-src" : "E:/GitHub/Kronos Engine",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"E:\\GitHub\\Kronos Engine\\include\\core\\math"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/CoreSystemsMathTest.dir",
+	"sources" : 
+	{
+		"CMakeFiles/CoreSystemsMathTest.dir/tests/core/math.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "E:/GitHub/Kronos Engine/tests/core/math.cpp"
+		}
+	}
+}

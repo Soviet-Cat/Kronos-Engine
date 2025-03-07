@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "KronosEngine",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -41,6 +43,13 @@
 					"id" : "CoreSystems::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-CoreSystems-Debug-5fe3d5ea092962b90392.json",
 					"name" : "CoreSystems",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CoreSystemsMathTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CoreSystemsMathTest-Debug-f89fbd4d7a7ee0b85d14.json",
+					"name" : "CoreSystemsMathTest",
 					"projectIndex" : 0
 				}
 			]

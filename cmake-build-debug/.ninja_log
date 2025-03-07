@@ -1,8 +1,41 @@
 # ninja log v6
-1	25	7630149784830269	CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj.ddi	3833627efa2cfc49
-25	51	7630149785303530	CMakeFiles/CoreSystems.dir/CXX.dd	d15e87c9e7d14423
-25	51	7630149785303530	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/CoreSystems.dir/CXXModules.json	d15e87c9e7d14423
-25	51	7630149785303530	CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj.modmap	d15e87c9e7d14423
-56	106	7630149785374447	CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj	fa952348a980219d
-106	221	7630149786951512	E:/GitHub/Kronos Engine/bin/libCoreSystems.dll	f736fe556f46a2bf
-106	221	7630149786951512	E:/GitHub/Kronos Engine/lib/libCoreSystems.dll.a	f736fe556f46a2bf
+3	78	7630199935497507	CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj.ddi	3833627efa2cfc49
+3	23	7630204113400028	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/CoreSystemsMathTest.dir/CXXModules.json	e2fc3a14bdd67514
+284	358	7630199938982323	E:/GitHub/Kronos Engine/bin/libCoreSystems.dll	f736fe556f46a2bf
+79	98	7630199936257522	CMakeFiles/CoreSystems.dir/CXX.dd	d15e87c9e7d14423
+79	98	7630199936257522	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/CoreSystems.dir/CXXModules.json	d15e87c9e7d14423
+79	98	7630199936257522	CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj.modmap	d15e87c9e7d14423
+169	618	7630199937157436	CMakeFiles/CoreSystemsMathTest.dir/tests/core/math.cpp.obj	836c787e49ce8d83
+99	284	7630199936453273	CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj	fa952348a980219d
+284	358	7630199938982323	E:/GitHub/Kronos Engine/lib/libCoreSystems.dll.a	f736fe556f46a2bf
+7	147	7630199935529898	CMakeFiles/CoreSystemsMathTest.dir/tests/core/math.cpp.obj.ddi	1028e3113902f500
+3	23	7630204113400028	CMakeFiles/CoreSystemsMathTest.dir/CXX.dd	e2fc3a14bdd67514
+3	23	7630204113400028	CMakeFiles/CoreSystemsMathTest.dir/tests/core/math.cpp.obj.modmap	e2fc3a14bdd67514
+1	225	7630205017878798	build.ninja	d78e744289d7c622
+24	101	7630204113607889	E:/GitHub/Kronos Engine/bin/CoreSystemsMathTest.exe	789ec276e97b862b
+3	86	7630205312456284	CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj.ddi	3833627efa2cfc49
+86	106	7630205313286198	CMakeFiles/CoreSystems.dir/CXX.dd	d15e87c9e7d14423
+86	106	7630205313286198	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/CoreSystems.dir/CXXModules.json	d15e87c9e7d14423
+86	106	7630205313286198	CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj.modmap	d15e87c9e7d14423
+7	142	7630205312496956	CMakeFiles/CoreSystemsMathTest.dir/tests/core/math.cpp.obj.ddi	1028e3113902f500
+142	163	7630205313844943	CMakeFiles/CoreSystemsMathTest.dir/CXX.dd	e2fc3a14bdd67514
+142	163	7630205313844943	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/CoreSystemsMathTest.dir/CXXModules.json	e2fc3a14bdd67514
+142	163	7630205313844943	CMakeFiles/CoreSystemsMathTest.dir/tests/core/math.cpp.obj.modmap	e2fc3a14bdd67514
+111	310	7630205313534074	CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj	fa952348a980219d
+310	391	7630205316271540	E:/GitHub/Kronos Engine/bin/libCoreSystems.dll	f736fe556f46a2bf
+310	391	7630205316271540	E:/GitHub/Kronos Engine/lib/libCoreSystems.dll.a	f736fe556f46a2bf
+164	549	7630205314057582	CMakeFiles/CoreSystemsMathTest.dir/tests/core/math.cpp.obj	836c787e49ce8d83
+549	627	7630205317924465	E:/GitHub/Kronos Engine/bin/CoreSystemsMathTest.exe	1bc9510060b70cf0
+4	78	7630207182075586	CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj.ddi	3833627efa2cfc49
+78	97	7630207182817287	CMakeFiles/CoreSystems.dir/CXX.dd	d15e87c9e7d14423
+78	97	7630207182817287	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/CoreSystems.dir/CXXModules.json	d15e87c9e7d14423
+78	97	7630207182817287	CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj.modmap	d15e87c9e7d14423
+98	299	7630207183011453	CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj	fa952348a980219d
+299	373	7630207185711595	E:/GitHub/Kronos Engine/bin/libCoreSystems.dll	f736fe556f46a2bf
+299	373	7630207185711595	E:/GitHub/Kronos Engine/lib/libCoreSystems.dll.a	f736fe556f46a2bf
+4	129	7630207186391398	CMakeFiles/CoreSystemsMathTest.dir/tests/core/math.cpp.obj.ddi	1028e3113902f500
+129	148	7630207187632290	CMakeFiles/CoreSystemsMathTest.dir/CXX.dd	e2fc3a14bdd67514
+129	148	7630207187632290	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/CoreSystemsMathTest.dir/CXXModules.json	e2fc3a14bdd67514
+129	148	7630207187632290	CMakeFiles/CoreSystemsMathTest.dir/tests/core/math.cpp.obj.modmap	e2fc3a14bdd67514
+149	521	7630207187835207	CMakeFiles/CoreSystemsMathTest.dir/tests/core/math.cpp.obj	836c787e49ce8d83
+522	599	7630207191564974	E:/GitHub/Kronos Engine/bin/CoreSystemsMathTest.exe	1bc9510060b70cf0
