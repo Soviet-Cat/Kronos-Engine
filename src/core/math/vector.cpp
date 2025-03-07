@@ -1,7 +1,7 @@
 #include "vector.hpp"
 #include <cmath>
 
-using namespace Kronos::CoreSystems::Maths;
+using namespace Kronos::CoreSystems::Math;
 
 float& Vector3D::operator[](const int index)
 {
@@ -88,5 +88,25 @@ void Vector3D::normalize()
     this->x = vec.x;
     this->y = vec.y;
     this->z = vec.z;
+}
+
+float Vector3D::dot(const Vector3D& vector) const
+{
+    return x * vector.x + y * vector.y + z * vector.z;
+}
+
+Vector3D Vector3D::cross(const Vector3D& vector) const
+{
+    return {y * vector.z - z * vector.y, z * vector.x - x * vector.z, x * vector.y - y * vector.x};
+}
+
+Vector3D Vector3D::project(const Vector3D& vector) const
+{
+    return vector * (dot(vector) / vector.dot(vector));
+}
+
+Vector3D Vector3D::reject(const Vector3D& vector) const
+{
+    return (*this) - vector * (dot(vector) / vector.dot(vector));
 }
 

@@ -6,15 +6,18 @@
 # 1 "E:/GitHub/Kronos Engine/include/core/math/vector.hpp" 1
        
 
-namespace Kronos::CoreSystems::Maths
+namespace Kronos::CoreSystems::Math
 {
     struct Vector3D
     {
         float x, y, z;
+
         Vector3D() = default;
         Vector3D(const float x, const float y, const float z) : x(x), y(y), z(z) {}
+
         float& operator[](int index);
         const float& operator[](int index) const;
+
         Vector3D operator*(float scalar) const;
         Vector3D operator/(float scalar) const;
         Vector3D operator*=(float scalar);
@@ -24,9 +27,16 @@ namespace Kronos::CoreSystems::Maths
         Vector3D operator-() const;
         Vector3D operator+=(const Vector3D& vector);
         Vector3D operator-=(const Vector3D& vector);
+
         float magnitude() const;
         Vector3D normalized() const;
         void normalize();
+
+        float dot(const Vector3D& vector) const;
+        Vector3D cross(const Vector3D& vector) const;
+
+        Vector3D project(const Vector3D& vector) const;
+        Vector3D reject(const Vector3D& vector) const;
     };
 }
 # 2 "E:/GitHub/Kronos Engine/tests/core/math.cpp" 2
@@ -41504,13 +41514,14 @@ namespace std
 
 
 # 4 "E:/GitHub/Kronos Engine/tests/core/math.cpp"
-using namespace Kronos::CoreSystems::Maths;
+using namespace Kronos::CoreSystems::Math;
 
 int main()
 {
     Vector3D vec = Vector3D(1.0, 1.0, 1.0);
-    Vector3D vec_inverse = -vec;
-    std::cout << vec_inverse.x << std::endl;
-    std::cout << vec_inverse.y << std::endl;
-    std::cout << vec_inverse.z << std::endl;
+    Vector3D vec2 = vec + Vector3D(1.0, 1.0, 1.0);
+    std::cout << vec2.x << std::endl;
+    std::cout << vec2.y << std::endl;
+    std::cout << vec2.z << std::endl;
+    std::cout << vec2.magnitude() << std::endl;
 }

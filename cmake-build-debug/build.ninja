@@ -68,7 +68,26 @@ build CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj: CXX_COMPILER__Cor
   OBJECT_FILE_DIR = CMakeFiles\CoreSystems.dir\src\core\math
   dyndep = CMakeFiles/CoreSystems.dir/CXX.dd
 
-build CMakeFiles/CoreSystems.dir/CXX.dd | E$:/GitHub/Kronos$ Engine/cmake-build-debug/CMakeFiles/CoreSystems.dir/CXXModules.json CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj.modmap: CXX_DYNDEP__CoreSystems_Debug CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj.ddi | E$:/GitHub/Kronos$ Engine/cmake-build-debug/CMakeFiles/CoreSystems.dir/CXXDependInfo.json
+build CMakeFiles/CoreSystems.dir/src/core/math/matrix.cpp.obj.ddi: CXX_SCAN__CoreSystems_Debug E$:/GitHub/Kronos$ Engine/src/core/math/matrix.cpp || cmake_object_order_depends_target_CoreSystems
+  DEFINES = -DCoreSystems_EXPORTS
+  DEP_FILE = CMakeFiles\CoreSystems.dir\src\core\math\matrix.cpp.obj.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles\CoreSystems.dir\src\core\math\matrix.cpp.obj.ddi
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I"E:/GitHub/Kronos Engine/include/core/math"
+  OBJ_FILE = CMakeFiles\CoreSystems.dir\src\core\math\matrix.cpp.obj
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles\CoreSystems.dir\src\core\math\matrix.cpp.obj.ddi.i
+
+build CMakeFiles/CoreSystems.dir/src/core/math/matrix.cpp.obj: CXX_COMPILER__CoreSystems_scanned_Debug E$:/GitHub/Kronos$ Engine/src/core/math/matrix.cpp | CMakeFiles/CoreSystems.dir/src/core/math/matrix.cpp.obj.modmap || cmake_object_order_depends_target_CoreSystems CMakeFiles/CoreSystems.dir/CXX.dd
+  DEFINES = -DCoreSystems_EXPORTS
+  DEP_FILE = CMakeFiles\CoreSystems.dir\src\core\math\matrix.cpp.obj.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles\CoreSystems.dir\src\core\math\matrix.cpp.obj.modmap
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I"E:/GitHub/Kronos Engine/include/core/math"
+  OBJECT_DIR = CMakeFiles\CoreSystems.dir
+  OBJECT_FILE_DIR = CMakeFiles\CoreSystems.dir\src\core\math
+  dyndep = CMakeFiles/CoreSystems.dir/CXX.dd
+
+build CMakeFiles/CoreSystems.dir/CXX.dd | E$:/GitHub/Kronos$ Engine/cmake-build-debug/CMakeFiles/CoreSystems.dir/CXXModules.json CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj.modmap CMakeFiles/CoreSystems.dir/src/core/math/matrix.cpp.obj.modmap: CXX_DYNDEP__CoreSystems_Debug CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj.ddi CMakeFiles/CoreSystems.dir/src/core/math/matrix.cpp.obj.ddi | E$:/GitHub/Kronos$ Engine/cmake-build-debug/CMakeFiles/CoreSystems.dir/CXXDependInfo.json
 
 
 # =============================================================================
@@ -78,7 +97,7 @@ build CMakeFiles/CoreSystems.dir/CXX.dd | E$:/GitHub/Kronos$ Engine/cmake-build-
 #############################################
 # Link the shared library E:\GitHub\Kronos Engine\bin\libCoreSystems.dll
 
-build E$:/GitHub/Kronos$ Engine/bin/libCoreSystems.dll E$:/GitHub/Kronos$ Engine/lib/libCoreSystems.dll.a: CXX_SHARED_LIBRARY_LINKER__CoreSystems_Debug CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj
+build E$:/GitHub/Kronos$ Engine/bin/libCoreSystems.dll E$:/GitHub/Kronos$ Engine/lib/libCoreSystems.dll.a: CXX_SHARED_LIBRARY_LINKER__CoreSystems_Debug CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj CMakeFiles/CoreSystems.dir/src/core/math/matrix.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CoreSystems.dir

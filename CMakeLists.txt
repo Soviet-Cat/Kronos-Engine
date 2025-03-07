@@ -18,7 +18,9 @@ set(TEST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tests")
 
 # create core library
 add_library(CoreSystems SHARED
-    "${SOURCE_DIR}/core/math/vector.cpp" # math
+        # math
+        "${SOURCE_DIR}/core/math/vector.cpp"
+        "${SOURCE_DIR}/core/math/matrix.cpp"
 )
 set_target_properties(CoreSystems PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
@@ -26,7 +28,8 @@ set_target_properties(CoreSystems PROPERTIES
         ARCHIVE_OUTPUT_DIRECTORY ${LIB_DIR}
 )
 target_include_directories(CoreSystems PUBLIC
-        "${INCLUDE_DIR}/core/math" # math
+        # math
+        "${INCLUDE_DIR}/core/math"
 )
 
 # create core library tests
