@@ -3,4 +3,4 @@ project(Kronos_Engine)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(Kronos_Engine SHARED library.cpp)
+add_library(Kronos_Engine SHARED)
