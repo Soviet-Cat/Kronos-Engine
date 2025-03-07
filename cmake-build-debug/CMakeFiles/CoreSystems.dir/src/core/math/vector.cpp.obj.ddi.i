@@ -37,6 +37,8 @@ namespace Kronos::CoreSystems::Math
 
         Vector3D project(const Vector3D& vector) const;
         Vector3D reject(const Vector3D& vector) const;
+
+        void zero();
     };
 }
 # 2 "E:/GitHub/Kronos Engine/src/core/math/vector.cpp" 2
@@ -22018,4 +22020,11 @@ Vector3D Vector3D::project(const Vector3D& vector) const
 Vector3D Vector3D::reject(const Vector3D& vector) const
 {
     return (*this) - vector * (dot(vector) / vector.dot(vector));
+}
+
+void Vector3D::zero()
+{
+    x = 0.0f;
+    y = 0.0f;
+    z = 0.0f;
 }

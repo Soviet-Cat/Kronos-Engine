@@ -31,5 +31,7 @@ namespace Kronos::CoreSystems::Math
 
         Vector3D project(const Vector3D& vector) const;
         Vector3D reject(const Vector3D& vector) const;
+
+        void zero();
     };
 }

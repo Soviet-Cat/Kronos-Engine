@@ -26,5 +26,13 @@ namespace Kronos::CoreSystems::Math
 
         float determinant();
         Matrix3D inverse();
+
+        void zero();
+
+        void rotateX(float angle);
+        void rotateY(float angle);
+        void rotateZ(float angle);
+
+        void rotate(float angle, const Vector3D& axis);
     };
 }

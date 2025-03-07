@@ -1,4 +1,5 @@
 #include "matrix.hpp"
+#include <cmath>
 
 using namespace Kronos::CoreSystems::Math;
 
@@ -93,4 +94,59 @@ Matrix3D Matrix3D::operator-()
     return inverse();
 }
 
+void Matrix3D::zero()
+{
+    n[0][0] = 0.0f; n[0][1] = 0.0f; n[0][2] = 0.0f;
+    n[1][0] = 0.0f; n[1][1] = 0.0f; n[1][2] = 0.0f;
+    n[2][0] = 0.0f; n[2][1] = 0.0f; n[2][2] = 0.0f;
+}
+
+void Matrix3D::rotateX(const float angle)
+{
+    const float radians = angle * (M_PI / 180.0f);
+    const float cos = std::cos(radians);
+    const float sin = std::sin(radians);
+    n[0][0] = 1.0f; n[0][1] = 0.0f; n[0][2] = 0.0f;
+    n[1][0] = 0.0f; n[1][1] = cos; n[1][2] = -sin;
+    n[2][0] = 0.0f; n[2][1] = sin; n[2][2] = cos;
+}
+
+void Matrix3D::rotateY(const float angle)
+{
+    const float radians = angle * (M_PI / 180.0f);
+    const float cos = std::cos(radians);
+    const float sin = std::sin(radians);
+    n[0][0] = cos; n[0][1] = 0.0f; n[0][2] = sin;
+    n[1][0] = 0.0f; n[1][1] = 1.0f; n[1][2] = 0.0f;
+    n[2][0] = -sin; n[2][1] = 0.0f; n[2][2] = cos;
+}
+
+void Matrix3D::rotateZ(const float angle)
+{
+    const float radians = angle * (M_PI / 180.0f);
+    const float cos = std::cos(radians);
+    const float sin = std::sin(radians);
+    n[0][0] = cos; n[0][1] = -sin; n[0][2] = 0.0f;
+    n[1][0] = sin; n[1][1] = cos; n[1][2] = 0.0f;
+    n[2][0] = 0.0f; n[2][1] = 0.0f; n[2][2] = 1.0f;
+}
+
+void Matrix3D::rotate(const float angle, const Vector3D& axis)
+{
+    const float radians = angle * (M_PI / 180.0f);
+    const float cos = std::cos(radians);
+    const float sin = std::sin(radians);
+    const float d = 1.0f - cos;
+
+    const float x = axis.x * d;
+    const float y = axis.y * d;
+    const float z = axis.z * d;
+    const float axay = axis.x * axis.y;
+    const float axaz = axis.x * axis.z;
+    const float ayaz = axis.y * axis.z;
+
+    n[0][0] = cos + x * axis.x; n[0][1] = axay - sin * axis.z; n[0][2] = axaz + sin * axis.y;
+    n[1][0] = axay + sin * axis.z; n[1][1] = cos + y * axis.y; n[1][2] = ayaz - sin * axis.x;
+    n[2][0] = axaz - sin * axis.y; n[2][1] = ayaz + sin * axis.x; n[2][2] = cos + z * axis.z;
+}
 

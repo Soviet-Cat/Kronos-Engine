@@ -145,4 +145,5 @@ CMakeFiles\CoreSystemsMathTest.dir\tests\core\math.cpp.obj.ddi: \
  E:/msys64/mingw64/include/c++/14.2.0/bits/basic_ios.tcc \
  E:/msys64/mingw64/include/c++/14.2.0/bits/ostream.tcc \
  E:/msys64/mingw64/include/c++/14.2.0/istream \
- E:/msys64/mingw64/include/c++/14.2.0/bits/istream.tcc
+ E:/msys64/mingw64/include/c++/14.2.0/bits/istream.tcc \
+ E:/GitHub/Kronos\ Engine/include/core/math/matrix.hpp

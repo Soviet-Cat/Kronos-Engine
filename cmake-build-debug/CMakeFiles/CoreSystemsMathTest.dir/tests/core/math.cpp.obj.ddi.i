@@ -37,6 +37,8 @@ namespace Kronos::CoreSystems::Math
 
         Vector3D project(const Vector3D& vector) const;
         Vector3D reject(const Vector3D& vector) const;
+
+        void zero();
     };
 }
 # 2 "E:/GitHub/Kronos Engine/tests/core/math.cpp" 2
@@ -41511,17 +41513,58 @@ namespace std
 
 }
 # 3 "E:/GitHub/Kronos Engine/tests/core/math.cpp" 2
+# 1 "E:/GitHub/Kronos Engine/include/core/math/matrix.hpp" 1
+       
 
 
-# 4 "E:/GitHub/Kronos Engine/tests/core/math.cpp"
+
+# 4 "E:/GitHub/Kronos Engine/include/core/math/matrix.hpp"
+namespace Kronos::CoreSystems::Math
+{
+    struct Matrix3D
+    {
+    private:
+        float n[3][3];
+
+    public:
+        Matrix3D() = default;
+        Matrix3D(float n00, float n01, float n02,
+                 float n10, float n11, float n12,
+                 float n20, float n21, float n22);
+        Matrix3D(const Vector3D& vector_a, const Vector3D& vector_b, const Vector3D& vector_c);
+
+        float& operator()(int index_x, int index_y);
+        const float& operator()(int index_x, int index_y) const;
+        Vector3D& operator[](int index_y);
+        const Vector3D& operator[](int index_y) const;
+
+        Matrix3D operator*(const Matrix3D& matrix);
+        Vector3D operator*(const Vector3D& vector);
+        Matrix3D operator-();
+
+        float determinant();
+        Matrix3D inverse();
+
+        void zero();
+
+        void rotateX(float angle);
+        void rotateY(float angle);
+        void rotateZ(float angle);
+
+        void rotate(float angle, const Vector3D& axis);
+    };
+}
+# 4 "E:/GitHub/Kronos Engine/tests/core/math.cpp" 2
+
 using namespace Kronos::CoreSystems::Math;
 
 int main()
 {
-    Vector3D vec = Vector3D(1.0, 1.0, 1.0);
-    Vector3D vec2 = vec + Vector3D(1.0, 1.0, 1.0);
+    Vector3D vec = Vector3D(0.0, 1.0, 0.0);
+    Matrix3D mat = Matrix3D();
+    mat.rotateX(90.0f);
+    Vector3D vec2 = mat * vec;
     std::cout << vec2.x << std::endl;
     std::cout << vec2.y << std::endl;
     std::cout << vec2.z << std::endl;
-    std::cout << vec2.magnitude() << std::endl;
 }
