@@ -15,3 +15,16 @@ set(BIN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/bin")
 set(LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib")
 set(THIRD_PARTY_DIR "${CMAKE_CURRENT_SOURCE_DIR}/third_party")
 set(TEST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tests")
+
+# create core library
+add_library(CoreSystems SHARED
+    "${SOURCE_DIR}/core/math/vector.cpp" # math
+)
+set_target_properties(CoreSystems PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
+        LIBRARY_OUTPUT_DIRECTORY ${LIB_DIR}
+        ARCHIVE_OUTPUT_DIRECTORY ${LIB_DIR}
+)
+target_include_directories(CoreSystems PUBLIC
+        "${INCLUDE_DIR}/core/math" # math
+)

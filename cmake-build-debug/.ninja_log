@@ -1,1 +1,8 @@
 # ninja log v6
+1	25	7630149784830269	CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj.ddi	3833627efa2cfc49
+25	51	7630149785303530	CMakeFiles/CoreSystems.dir/CXX.dd	d15e87c9e7d14423
+25	51	7630149785303530	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/CoreSystems.dir/CXXModules.json	d15e87c9e7d14423
+25	51	7630149785303530	CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj.modmap	d15e87c9e7d14423
+56	106	7630149785374447	CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj	fa952348a980219d
+106	221	7630149786951512	E:/GitHub/Kronos Engine/bin/libCoreSystems.dll	f736fe556f46a2bf
+106	221	7630149786951512	E:/GitHub/Kronos Engine/lib/libCoreSystems.dll.a	f736fe556f46a2bf

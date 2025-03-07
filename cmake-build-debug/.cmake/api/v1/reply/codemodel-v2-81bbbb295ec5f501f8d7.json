@@ -12,7 +12,11 @@
 						"string" : "3.31"
 					},
 					"projectIndex" : 0,
-					"source" : "."
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
 				}
 			],
 			"name" : "Debug",
@@ -23,10 +27,23 @@
 					[
 						0
 					],
-					"name" : "KronosEngine"
+					"name" : "KronosEngine",
+					"targetIndexes" : 
+					[
+						0
+					]
 				}
 			],
-			"targets" : []
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CoreSystems::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CoreSystems-Debug-5fe3d5ea092962b90392.json",
+					"name" : "CoreSystems",
+					"projectIndex" : 0
+				}
+			]
 		}
 	],
 	"kind" : "codemodel",
