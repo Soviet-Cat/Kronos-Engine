@@ -150,3 +150,66 @@ void Matrix3D::rotate(const float angle, const Vector3D& axis)
     n[2][0] = axaz - sin * axis.y; n[2][1] = ayaz + sin * axis.x; n[2][2] = cos + z * axis.z;
 }
 
+void Matrix3D::reflect(const Vector3D& vector)
+{
+    const float x = vector.x * -2.0f;
+    const float y = vector.y * -2.0f;
+    const float z = vector.z * -2.0f;
+    const float axay = x * vector.y;
+    const float axaz = x * vector.z;
+    const float ayaz = y * vector.z;
+
+    n[0][0] = x * vector.x + 1.0f; n[0][1] = axay; n[0][2] = axaz;
+    n[1][0] = axay; n[1][1] = y * vector.y + 1.0f; n[1][2] = ayaz;
+    n[2][0] = axaz; n[2][1] = ayaz; n[2][2] = z * vector.z + 1.0f;
+}
+
+void Matrix3D::involution(const Vector3D& vector)
+{
+    const float x = vector.x * 2.0f;
+    const float y = vector.y * 2.0f;
+    const float z = vector.z * 2.0f;
+    const float axay = x * vector.y;
+    const float axaz = x * vector.z;
+    const float ayaz = y * vector.z;
+
+    n[0][0] = x * vector.x - 1.0f; n[0][1] = axay; n[0][2] = axaz;
+    n[1][0] = axay; n[1][1] = y * vector.y - 1.0f; n[1][2] = ayaz;
+    n[2][0] = axaz; n[2][1] = ayaz; n[2][2] = z * vector.z - 1.0f;
+}
+
+void Matrix3D::scale(const float x, const float y, const float z)
+{
+    n[0][0] = x; n[0][1] = 0.0f; n[0][2] = 0.0f;
+    n[1][0] = y; n[1][1] = 0.0f; n[1][2] = 0.0f;
+    n[2][0] = 0.0f; n[2][1] = 0.0f; n[2][2] = z;
+}
+
+void Matrix3D::scale(const float scale, const Vector3D& axis)
+{
+    const float s = scale - 1.0f;
+    const float x = axis.x * s;
+    const float y = axis.y * s;
+    const float z = axis.z * s;
+    const float axay = axis.x * axis.y;
+    const float axaz = axis.x * axis.z;
+    const float ayaz = axis.y * axis.z;
+
+    n[0][0] = x * axis.x + 1.0f; n[0][1] = axay; n[0][2] = axaz;
+    n[1][0] = axay; n[1][1] = y * axis.y + 1.0f; n[1][2] = ayaz;
+    n[2][0] = axaz; n[2][1] = ayaz; n[2][2] = z * axis.z + 1.0f;
+}
+
+void Matrix3D::skew(const float angle, const Vector3D& vector_a, const Vector3D& vector_b)
+{
+    const float radians = angle * (M_PI / 180.0f);
+    const float tan = std::tan(radians);
+    const float x = vector_a.x * tan;
+    const float y = vector_a.y * tan;
+    const float z = vector_a.z * tan;
+
+    n[0][0] = x * vector_b.x + 1.0f; n[0][1] = x * vector_b.y; n[0][2] = x * vector_b.z;
+    n[1][0] = y * vector_b.x; n[1][1] = y * vector_b.y + 1.0f; n[1][2] = y * vector_b.z;
+    n[2][0] = z * vector_b.x; n[2][1] = z * vector_b.y; n[2][2] = z * vector_b.z + 1.0f;
+}
+

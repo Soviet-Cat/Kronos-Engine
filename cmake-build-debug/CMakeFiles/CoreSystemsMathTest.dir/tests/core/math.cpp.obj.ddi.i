@@ -41550,8 +41550,16 @@ namespace Kronos::CoreSystems::Math
         void rotateX(float angle);
         void rotateY(float angle);
         void rotateZ(float angle);
-
         void rotate(float angle, const Vector3D& axis);
+
+        void reflect(const Vector3D& vector);
+
+        void involution(const Vector3D& vector);
+
+        void scale(float x, float y, float z);
+        void scale(float scale, const Vector3D& axis);
+
+        void skew(float angle, const Vector3D& vector_a, const Vector3D& vector_b);
     };
 }
 # 4 "E:/GitHub/Kronos Engine/tests/core/math.cpp" 2
@@ -41560,10 +41568,10 @@ using namespace Kronos::CoreSystems::Math;
 
 int main()
 {
-    Vector3D vec = Vector3D(0.0, 1.0, 0.0);
-    Matrix3D mat = Matrix3D();
+    const auto vec = Vector3D(0.0, 1.0, 0.0);
+    auto mat = Matrix3D();
     mat.rotateX(90.0f);
-    Vector3D vec2 = mat * vec;
+    const Vector3D vec2 = mat * vec;
     std::cout << vec2.x << std::endl;
     std::cout << vec2.y << std::endl;
     std::cout << vec2.z << std::endl;

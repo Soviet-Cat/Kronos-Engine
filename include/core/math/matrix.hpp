@@ -32,7 +32,15 @@ namespace Kronos::CoreSystems::Math
         void rotateX(float angle);
         void rotateY(float angle);
         void rotateZ(float angle);
-
         void rotate(float angle, const Vector3D& axis);
+
+        void reflect(const Vector3D& vector);
+
+        void involution(const Vector3D& vector);
+
+        void scale(float x, float y, float z);
+        void scale(float scale, const Vector3D& axis);
+
+        void skew(float angle, const Vector3D& vector_a, const Vector3D& vector_b);
     };
 }
