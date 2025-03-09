@@ -1,6 +1,5 @@
 CMakeFiles\CoreSystemsMathTest.dir\tests\core\math.cpp.obj.ddi: \
  E:/GitHub/Kronos\ Engine/tests/core/math.cpp \
- E:/GitHub/Kronos\ Engine/include/core/math/vector.hpp \
  E:/msys64/mingw64/include/c++/14.2.0/iostream \
  E:/msys64/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
  E:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -146,4 +145,7 @@ CMakeFiles\CoreSystemsMathTest.dir\tests\core\math.cpp.obj.ddi: \
  E:/msys64/mingw64/include/c++/14.2.0/bits/ostream.tcc \
  E:/msys64/mingw64/include/c++/14.2.0/istream \
  E:/msys64/mingw64/include/c++/14.2.0/bits/istream.tcc \
- E:/GitHub/Kronos\ Engine/include/core/math/matrix.hpp
+ E:/GitHub/Kronos\ Engine/include/core/math/vector.hpp \
+ E:/GitHub/Kronos\ Engine/include/core/math/matrix.hpp \
+ E:/GitHub/Kronos\ Engine/include/core/math/common.hpp \
+ E:/GitHub/Kronos\ Engine/include/core/math/quaternion.hpp

@@ -21,10 +21,20 @@
 	"module-dir" : "E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/CoreSystems.dir",
 	"sources" : 
 	{
+		"CMakeFiles/CoreSystems.dir/src/core/math/common.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "E:/GitHub/Kronos Engine/src/core/math/common.cpp"
+		},
 		"CMakeFiles/CoreSystems.dir/src/core/math/matrix.cpp.obj" : 
 		{
 			"language" : "CXX",
 			"source" : "E:/GitHub/Kronos Engine/src/core/math/matrix.cpp"
+		},
+		"CMakeFiles/CoreSystems.dir/src/core/math/quaternion.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "E:/GitHub/Kronos Engine/src/core/math/quaternion.cpp"
 		},
 		"CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj" : 
 		{

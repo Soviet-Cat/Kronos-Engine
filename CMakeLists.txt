@@ -21,6 +21,8 @@ add_library(CoreSystems SHARED
         # math
         "${SOURCE_DIR}/core/math/vector.cpp"
         "${SOURCE_DIR}/core/math/matrix.cpp"
+        "${SOURCE_DIR}/core/math/quaternion.cpp"
+        "${SOURCE_DIR}/core/math/common.cpp"
 )
 set_target_properties(CoreSystems PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}

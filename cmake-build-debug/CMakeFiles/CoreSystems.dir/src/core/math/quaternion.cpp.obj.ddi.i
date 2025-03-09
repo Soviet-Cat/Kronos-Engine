@@ -1,44 +1,60 @@
-# 0 "E:/GitHub/Kronos Engine/src/core/math/vector.cpp"
+# 0 "E:/GitHub/Kronos Engine/src/core/math/quaternion.cpp"
 # 1 "E:\\GitHub\\Kronos Engine\\cmake-build-debug//"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "E:/GitHub/Kronos Engine/src/core/math/vector.cpp"
-# 1 "E:/GitHub/Kronos Engine/include/core/math/vector.hpp" 1
+# 1 "E:/GitHub/Kronos Engine/src/core/math/quaternion.cpp"
+# 1 "E:/GitHub/Kronos Engine/include/core/math/quaternion.hpp" 1
+       
+# 1 "E:/GitHub/Kronos Engine/include/core/math/matrix.hpp" 1
        
 
 namespace Kronos::CoreSystems::Math
 {
-    struct Vector3
+    struct Matrix3x3
     {
-        float x, y, z;
+    private:
+        float m[3][3];
+    public:
+        Matrix3x3();
+        Matrix3x3(float m00, float m01, float m02, float m10, float m11, float m12, float m20, float m21, float m22);
 
-        Vector3();
-        Vector3(float x, float y, float z);
+        float& operator()(int i, int j);
+        const float& operator()(int i, int j) const;
+
+        Matrix3x3 operator*(const Matrix3x3& m) const;
+        Matrix3x3 operator*=(const Matrix3x3& m);
+
+        float determinant() const;
+
+    };
+
+    Matrix3x3 makeXAxisRotationMatrix(float t);
+    Matrix3x3 makeYAxisRotationMatrix(float t);
+    Matrix3x3 makeZAxisRotationMatrix(float t);
+}
+# 3 "E:/GitHub/Kronos Engine/include/core/math/quaternion.hpp" 2
+
+namespace Kronos::CoreSystems::Math
+{
+    struct Quaternion
+    {
+        float x, y, z, w;
+
+        Quaternion();
+        Quaternion(float x, float y, float z);
+        Quaternion(float x, float y, float z, float w);
 
         float& operator[](int i);
         const float& operator[](int i) const;
 
-        Vector3 operator+(const Vector3& v) const;
-        Vector3 operator-(const Vector3& v) const;
-        Vector3 operator*(float s) const;
-        Vector3 operator/(float s) const;
-        Vector3 operator-() const;
-        Vector3 operator+=(const Vector3& v);
-        Vector3 operator-=(const Vector3& v);
-        Vector3 operator*=(float s);
-        Vector3 operator/=(float s);
+        Quaternion operator*(const Quaternion& q) const;
+        Quaternion& operator*=(const Quaternion& q);
 
-        float magnitude() const;
-        void normalize();
+        Matrix3x3 getRotationMatrix() const;
+        void setRotationMatrix(const Matrix3x3& m);
     };
-
-    float dot(const Vector3& a, const Vector3& b);
-    Vector3 cross(const Vector3& a, const Vector3& b);
-
-    Vector3 project(const Vector3& a, const Vector3& b);
-    Vector3 reject(const Vector3& a, const Vector3& b);
 }
-# 2 "E:/GitHub/Kronos Engine/src/core/math/vector.cpp" 2
+# 2 "E:/GitHub/Kronos Engine/src/core/math/quaternion.cpp" 2
 # 1 "E:/msys64/mingw64/include/c++/14.2.0/cmath" 1 3
 # 39 "E:/msys64/mingw64/include/c++/14.2.0/cmath" 3
        
@@ -21906,141 +21922,117 @@ namespace __gnu_cxx
 
 
 }
-# 3 "E:/GitHub/Kronos Engine/src/core/math/vector.cpp" 2
+# 3 "E:/GitHub/Kronos Engine/src/core/math/quaternion.cpp" 2
 
 
-# 4 "E:/GitHub/Kronos Engine/src/core/math/vector.cpp"
+# 4 "E:/GitHub/Kronos Engine/src/core/math/quaternion.cpp"
 namespace Kronos::CoreSystems::Math
 {
-    Vector3::Vector3()
+    Quaternion::Quaternion()
     {
         x = 0.0f;
         y = 0.0f;
         z = 0.0f;
+        w = 1.0f;
     }
 
-    Vector3::Vector3(const float x, const float y, const float z)
+    Quaternion::Quaternion(const float x, const float y, const float z)
     {
         this->x = x;
         this->y = y;
         this->z = z;
+        w = 1.0f;
     }
 
-    float& Vector3::operator[](const int i)
+    Quaternion::Quaternion(const float x, const float y, const float z, const float w)
+    {
+        this->x = x;
+        this->y = y;
+        this->z = z;
+        this->w = w;
+    }
+
+    float& Quaternion::operator[](const int i)
     {
         return (&x)[i];
     }
 
-    const float& Vector3::operator[](const int i) const
+    const float& Quaternion::operator[](const int i) const
     {
         return (&x)[i];
     }
 
-    Vector3 Vector3::operator+(const Vector3& v) const
+    Quaternion Quaternion::operator*(const Quaternion& q) const
     {
-        return {x + v.x, y + v.y, z + v.z};
-    }
-
-    Vector3 Vector3::operator-(const Vector3& v) const
-    {
-        return {x - v.x, y - v.y, z - v.z};
-    }
-
-    Vector3 Vector3::operator*(const float s) const
-    {
-        return {x * s, y * s, z * s};
-    }
-
-    Vector3 Vector3::operator/(const float s) const
-    {
-        if (s != 0.0f)
-        {
-            const float rec = 1.0f / s;
-            return {x * rec, y * rec, z * rec};
-        }
-        return {};
-    }
-
-    Vector3 Vector3::operator-() const
-    {
-        return {-x, -y, -z};
-    }
-
-    Vector3 Vector3::operator+=(const Vector3& v)
-    {
-        x += v.x;
-        y += v.y;
-        z += v.z;
-        return *this;
-    }
-
-    Vector3 Vector3::operator-=(const Vector3& v)
-    {
-        x -= v.x;
-        y -= v.y;
-        z -= v.z;
-        return *this;
-    }
-
-    Vector3 Vector3::operator*=(const float s)
-    {
-        x *= s;
-        y *= s;
-        z *= s;
-        return *this;
-    }
-
-    Vector3 Vector3::operator/=(const float s)
-    {
-        if (s != 0.0f)
-        {
-            const float rec = 1.0f / s;
-            x *= rec;
-            y *= rec;
-            z *= rec;
-            return *this;
-        }
-        return *this;
-    }
-
-    float Vector3::magnitude() const
-    {
-        return std::sqrt(x*x + y*y + z*z);
-    }
-
-    void Vector3::normalize()
-    {
-        if (const float m = magnitude(); m != 0.0f)
-        {
-            x /= m;
-            y /= m;
-            z /= m;
-        }
-    }
-
-    float dot(const Vector3& a, const Vector3& b)
-    {
-        return a.x * b.x + a.y * b.y + a.z * b.z;
-    }
-
-    Vector3 cross(const Vector3& a, const Vector3& b)
-    {
+        const Quaternion u = *this;
         return {
-            a.y * b.z - a.z * b.y,
-            a.z * b.x - a.x * b.z,
-            a.x * b.y - a.y * b.x
+            u.w * q.x + u.x * q.w + u.y * q.z - u.z * q.y,
+            u.w * q.y - u.x * q.z + u.y * q.w + u.z * q.x,
+            u.w * q.z + u.x * q.y - u.y * q.x + u.z * q.w,
+            u.w * q.w - u.x * q.x - u.y * q.y - u.z * q.z,
         };
     }
 
-    Vector3 project(const Vector3& a, const Vector3& b)
+    Matrix3x3 Quaternion::getRotationMatrix() const
     {
-        return b * (dot(a, b) / dot(b, b));
+        const float x2 = x * x;
+        const float y2 = y * y;
+        const float z2 = z * z;
+        const float xy = x * y;
+        const float xz = x * z;
+        const float yz = y * z;
+        const float wx = w * x;
+        const float wy = w * y;
+        const float wz = w * z;
+
+        return {
+            1.0f - 2.0f * (y2 + z2), 2.0f * (xy - wz), 2.0f * (xz + wy),
+            2.0f * (xy + wz), 1.0f - 2.0f * (x2 + z2), 2.0f * (yz - wx),
+            2.0f * (xz - wy), 2.0f * (yz + wx), 1.0f - 2.0f * (x2 + y2),
+        };
     }
 
-
-    Vector3 reject(const Vector3& a, const Vector3& b)
+    void Quaternion::setRotationMatrix(const Matrix3x3& m)
     {
-        return a - b * (dot(a, b) / dot(b, b));
+        const float m00 = m(0, 0);
+        const float m11 = m(1, 1);
+        const float m22 = m(2, 2);
+
+        if (const float sum = m00 + m11 + m22; sum > 0.0f)
+        {
+            w = std::sqrt(sum + 1.0f) * 0.5f;
+            const float f = 0.25 / w;
+            x = (m(2, 1) - m(1, 2)) * f;
+            y = (m(0, 2) - m(2, 0)) * f;
+            z = (m(1, 0) - m(0, 1)) * f;
+        }
+        else if ((m00 > m11) && (m00 > m22))
+        {
+            x = std::sqrt(m00 - m11 - m22 + 1.0f) * 0.5f;
+            const float f = 0.25f / x;
+
+            y = (m(1, 0) + m(0, 1)) * f;
+            z = (m(0, 2) + m(2, 0)) * f;
+            w = (m(2, 1) - m(1, 2)) * f;
+        }
+        else if (m11 > m22)
+        {
+            y = std::sqrt(m11 - m00 - m22 + 1.0f) * 0.5f;
+            const float f = 0.25f / y;
+
+            x = (m(1, 0) + m(0, 1)) * f;
+            z = (m(2, 1) + m(1, 2)) * f;
+            w = (m(0, 2) - m(2, 0)) * f;
+        }
+        else
+        {
+            z = std::sqrt(m22 - m00 - m11 + 1.0f) * 0.5f;
+            const float f = 0.25f / z;
+
+            x = (m(0, 2) + m(2, 0)) * f;
+            y = (m(2, 1) + m(1, 2)) * f;
+            w = (m(1, 0) - m(0, 1)) * f;
+        }
     }
 
 

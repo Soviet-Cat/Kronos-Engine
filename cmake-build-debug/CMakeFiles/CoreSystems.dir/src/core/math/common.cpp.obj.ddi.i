@@ -1,8 +1,39 @@
-# 0 "E:/GitHub/Kronos Engine/src/core/math/vector.cpp"
+# 0 "E:/GitHub/Kronos Engine/src/core/math/common.cpp"
 # 1 "E:\\GitHub\\Kronos Engine\\cmake-build-debug//"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "E:/GitHub/Kronos Engine/src/core/math/vector.cpp"
+# 1 "E:/GitHub/Kronos Engine/src/core/math/common.cpp"
+# 1 "E:/GitHub/Kronos Engine/include/core/math/common.hpp" 1
+       
+
+# 1 "E:/GitHub/Kronos Engine/include/core/math/matrix.hpp" 1
+       
+
+namespace Kronos::CoreSystems::Math
+{
+    struct Matrix3x3
+    {
+    private:
+        float m[3][3];
+    public:
+        Matrix3x3();
+        Matrix3x3(float m00, float m01, float m02, float m10, float m11, float m12, float m20, float m21, float m22);
+
+        float& operator()(int i, int j);
+        const float& operator()(int i, int j) const;
+
+        Matrix3x3 operator*(const Matrix3x3& m) const;
+        Matrix3x3 operator*=(const Matrix3x3& m);
+
+        float determinant() const;
+
+    };
+
+    Matrix3x3 makeXAxisRotationMatrix(float t);
+    Matrix3x3 makeYAxisRotationMatrix(float t);
+    Matrix3x3 makeZAxisRotationMatrix(float t);
+}
+# 4 "E:/GitHub/Kronos Engine/include/core/math/common.hpp" 2
 # 1 "E:/GitHub/Kronos Engine/include/core/math/vector.hpp" 1
        
 
@@ -38,7 +69,48 @@ namespace Kronos::CoreSystems::Math
     Vector3 project(const Vector3& a, const Vector3& b);
     Vector3 reject(const Vector3& a, const Vector3& b);
 }
-# 2 "E:/GitHub/Kronos Engine/src/core/math/vector.cpp" 2
+# 5 "E:/GitHub/Kronos Engine/include/core/math/common.hpp" 2
+# 1 "E:/GitHub/Kronos Engine/include/core/math/quaternion.hpp" 1
+       
+
+
+namespace Kronos::CoreSystems::Math
+{
+    struct Quaternion
+    {
+        float x, y, z, w;
+
+        Quaternion();
+        Quaternion(float x, float y, float z);
+        Quaternion(float x, float y, float z, float w);
+
+        float& operator[](int i);
+        const float& operator[](int i) const;
+
+        Quaternion operator*(const Quaternion& q) const;
+        Quaternion& operator*=(const Quaternion& q);
+
+        Matrix3x3 getRotationMatrix() const;
+        void setRotationMatrix(const Matrix3x3& m);
+    };
+}
+# 6 "E:/GitHub/Kronos Engine/include/core/math/common.hpp" 2
+
+namespace Kronos::CoreSystems::Math
+{
+    Vector3 operator*(const Vector3& v, const Matrix3x3& m);
+    Vector3 operator*(const Matrix3x3& m, const Vector3& v);
+    Vector3 operator*=(Vector3& v, const Matrix3x3& m);
+
+    Matrix3x3 operator-(const Matrix3x3& m);
+
+    Vector3 operator*(const Vector3& v, const Quaternion& q);
+    Vector3 operator*=(Vector3& v, const Quaternion& q);
+
+    float radians(float t);
+    float degrees(float t);
+}
+# 2 "E:/GitHub/Kronos Engine/src/core/math/common.cpp" 2
 # 1 "E:/msys64/mingw64/include/c++/14.2.0/cmath" 1 3
 # 39 "E:/msys64/mingw64/include/c++/14.2.0/cmath" 3
        
@@ -21906,141 +21978,79 @@ namespace __gnu_cxx
 
 
 }
-# 3 "E:/GitHub/Kronos Engine/src/core/math/vector.cpp" 2
+# 3 "E:/GitHub/Kronos Engine/src/core/math/common.cpp" 2
 
 
-# 4 "E:/GitHub/Kronos Engine/src/core/math/vector.cpp"
+# 4 "E:/GitHub/Kronos Engine/src/core/math/common.cpp"
 namespace Kronos::CoreSystems::Math
 {
-    Vector3::Vector3()
-    {
-        x = 0.0f;
-        y = 0.0f;
-        z = 0.0f;
-    }
-
-    Vector3::Vector3(const float x, const float y, const float z)
-    {
-        this->x = x;
-        this->y = y;
-        this->z = z;
-    }
-
-    float& Vector3::operator[](const int i)
-    {
-        return (&x)[i];
-    }
-
-    const float& Vector3::operator[](const int i) const
-    {
-        return (&x)[i];
-    }
-
-    Vector3 Vector3::operator+(const Vector3& v) const
-    {
-        return {x + v.x, y + v.y, z + v.z};
-    }
-
-    Vector3 Vector3::operator-(const Vector3& v) const
-    {
-        return {x - v.x, y - v.y, z - v.z};
-    }
-
-    Vector3 Vector3::operator*(const float s) const
-    {
-        return {x * s, y * s, z * s};
-    }
-
-    Vector3 Vector3::operator/(const float s) const
-    {
-        if (s != 0.0f)
-        {
-            const float rec = 1.0f / s;
-            return {x * rec, y * rec, z * rec};
-        }
-        return {};
-    }
-
-    Vector3 Vector3::operator-() const
-    {
-        return {-x, -y, -z};
-    }
-
-    Vector3 Vector3::operator+=(const Vector3& v)
-    {
-        x += v.x;
-        y += v.y;
-        z += v.z;
-        return *this;
-    }
-
-    Vector3 Vector3::operator-=(const Vector3& v)
-    {
-        x -= v.x;
-        y -= v.y;
-        z -= v.z;
-        return *this;
-    }
-
-    Vector3 Vector3::operator*=(const float s)
-    {
-        x *= s;
-        y *= s;
-        z *= s;
-        return *this;
-    }
-
-    Vector3 Vector3::operator/=(const float s)
-    {
-        if (s != 0.0f)
-        {
-            const float rec = 1.0f / s;
-            x *= rec;
-            y *= rec;
-            z *= rec;
-            return *this;
-        }
-        return *this;
-    }
-
-    float Vector3::magnitude() const
-    {
-        return std::sqrt(x*x + y*y + z*z);
-    }
-
-    void Vector3::normalize()
-    {
-        if (const float m = magnitude(); m != 0.0f)
-        {
-            x /= m;
-            y /= m;
-            z /= m;
-        }
-    }
-
-    float dot(const Vector3& a, const Vector3& b)
-    {
-        return a.x * b.x + a.y * b.y + a.z * b.z;
-    }
-
-    Vector3 cross(const Vector3& a, const Vector3& b)
+    Vector3 operator*(const Matrix3x3& m, const Vector3& v)
     {
         return {
-            a.y * b.z - a.z * b.y,
-            a.z * b.x - a.x * b.z,
-            a.x * b.y - a.y * b.x
+            m(0, 0) * v.x + m(0, 1) * v.y + m(0, 2) * v.z,
+            m(1, 0) * v.x + m(1, 1) * v.y + m(1, 2) * v.z,
+            m(2, 0) * v.x + m(2, 1) * v.y + m(2, 2) * v.z,
         };
     }
 
-    Vector3 project(const Vector3& a, const Vector3& b)
+    Vector3 operator*(const Vector3& v, const Matrix3x3& m)
     {
-        return b * (dot(a, b) / dot(b, b));
+        return m * v;
     }
 
-
-    Vector3 reject(const Vector3& a, const Vector3& b)
+    Vector3 operator*=(Vector3& v, const Matrix3x3& m)
     {
-        return a - b * (dot(a, b) / dot(b, b));
+        const float old_x = v.x;
+        const float old_y = v.y;
+        const float old_z = v.z;
+        v.x = m(0, 0) * old_x + m(0, 1) * old_y + m(0, 2) * old_z;
+        v.y = m(1, 0) * old_x + m(1, 1) * old_y + m(1, 2) * old_z;
+        v.z = m(2, 0) * old_x + m(2, 1) * old_y + m(2, 2) * old_z;
+        return v;
+    }
+
+    Matrix3x3 operator-(const Matrix3x3& m)
+    {
+        const auto a = Vector3(m(0, 0), m(1, 0), m(2, 0));
+        const auto b = Vector3(m(0, 1), m(1, 1), m(2, 1));
+        const auto c = Vector3(m(0, 2), m(1, 2), m(2, 2));
+
+        const Vector3 bc = cross(b, c);
+        const Vector3 ca = cross(c, a);
+        const Vector3 ab = cross(a, b);
+
+        const float det = 1.0f / dot(ab, c);
+
+        return {
+            bc.x * det, bc.y * det, bc.z * det,
+            ca.x * det, ca.y * det, ca.z * det,
+            ab.x * det, ab.y * det, ab.z * det
+        };
+    }
+
+    Vector3 operator*(const Vector3& v, const Quaternion& q)
+    {
+        const auto a = Vector3(q.x, q.y, q.z);
+        const float a2 = a.x * a.x + a.y * a.y + a.z * a.z;
+        return v * (q.w * q.w - a2) + a * (dot(v, a) * 2.0f) + cross(a, v) * (q.w * 2.0f);
+    }
+
+    float radians(const float t)
+    {
+        return t * (
+# 59 "E:/GitHub/Kronos Engine/src/core/math/common.cpp" 3
+                   3.14159265358979323846 
+# 59 "E:/GitHub/Kronos Engine/src/core/math/common.cpp"
+                        / 180.0f);
+    }
+
+    float degrees(const float t)
+    {
+        return t * (180.0f / 
+# 64 "E:/GitHub/Kronos Engine/src/core/math/common.cpp" 3
+                            3.14159265358979323846
+# 64 "E:/GitHub/Kronos Engine/src/core/math/common.cpp"
+                                );
     }
 
 

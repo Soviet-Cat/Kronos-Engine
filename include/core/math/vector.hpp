@@ -2,36 +2,33 @@
 
 namespace Kronos::CoreSystems::Math
 {
-    struct Vector3D
+    struct Vector3
     {
         float x, y, z;
 
-        Vector3D() = default;
-        Vector3D(const float x, const float y, const float z) : x(x), y(y), z(z) {}
+        Vector3();
+        Vector3(float x, float y, float z);
 
-        float& operator[](int index);
-        const float& operator[](int index) const;
+        float& operator[](int i);
+        const float& operator[](int i) const;
 
-        Vector3D operator*(float scalar) const;
-        Vector3D operator/(float scalar) const;
-        Vector3D operator*=(float scalar);
-        Vector3D operator/=(float scalar);
-        Vector3D operator+(const Vector3D& vector) const;
-        Vector3D operator-(const Vector3D& vector) const;
-        Vector3D operator-() const;
-        Vector3D operator+=(const Vector3D& vector);
-        Vector3D operator-=(const Vector3D& vector);
+        Vector3 operator+(const Vector3& v) const;
+        Vector3 operator-(const Vector3& v) const;
+        Vector3 operator*(float s) const;
+        Vector3 operator/(float s) const;
+        Vector3 operator-() const;
+        Vector3 operator+=(const Vector3& v);
+        Vector3 operator-=(const Vector3& v);
+        Vector3 operator*=(float s);
+        Vector3 operator/=(float s);
 
         float magnitude() const;
-        Vector3D normalized() const;
         void normalize();
-
-        float dot(const Vector3D& vector) const;
-        Vector3D cross(const Vector3D& vector) const;
-
-        Vector3D project(const Vector3D& vector) const;
-        Vector3D reject(const Vector3D& vector) const;
-
-        void zero();
     };
+
+    float dot(const Vector3& a, const Vector3& b);
+    Vector3 cross(const Vector3& a, const Vector3& b);
+
+    Vector3 project(const Vector3& a, const Vector3& b);
+    Vector3 reject(const Vector3& a, const Vector3& b);
 }

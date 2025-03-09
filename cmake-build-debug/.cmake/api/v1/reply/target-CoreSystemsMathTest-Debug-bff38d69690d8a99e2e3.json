@@ -2,13 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "E:/GitHub/Kronos Engine/bin/libCoreSystems.dll"
+			"path" : "E:/GitHub/Kronos Engine/bin/CoreSystemsMathTest.exe"
 		},
 		{
-			"path" : "E:/GitHub/Kronos Engine/lib/libCoreSystems.dll.a"
-		},
-		{
-			"path" : "E:/GitHub/Kronos Engine/bin/libCoreSystems.pdb"
+			"path" : "E:/GitHub/Kronos Engine/bin/CoreSystemsMathTest.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -16,7 +13,8 @@
 	{
 		"commands" : 
 		[
-			"add_library",
+			"add_executable",
+			"target_link_libraries",
 			"target_include_directories"
 		],
 		"files" : 
@@ -31,13 +29,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 20,
+				"line" : 38,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 30,
+				"line" : 43,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 42,
 				"parent" : 0
 			}
 		]
@@ -51,16 +55,10 @@
 					"fragment" : "-g -std=gnu++20 -fdiagnostics-color=always"
 				}
 			],
-			"defines" : 
-			[
-				{
-					"define" : "CoreSystems_EXPORTS"
-				}
-			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"path" : "E:/GitHub/Kronos Engine/include/core/math"
 				}
 			],
@@ -75,19 +73,34 @@
 			},
 			"sourceIndexes" : 
 			[
-				0,
-				1
+				0
 			]
 		}
 	],
-	"id" : "CoreSystems::@6890427a1f51a3e7e1df",
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "CoreSystems::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "CoreSystemsMathTest::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
 				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "\"E:\\GitHub\\Kronos Engine\\lib\\libCoreSystems.dll.a\"",
+				"role" : "libraries"
 			},
 			{
 				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
@@ -96,8 +109,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "CoreSystems",
-	"nameOnDisk" : "libCoreSystems.dll",
+	"name" : "CoreSystemsMathTest",
+	"nameOnDisk" : "CoreSystemsMathTest.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -109,8 +122,7 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
-				1
+				0
 			]
 		}
 	],
@@ -119,15 +131,9 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/core/math/vector.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/core/math/matrix.cpp",
+			"path" : "tests/core/math.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "SHARED_LIBRARY"
+	"type" : "EXECUTABLE"
 }

@@ -3,45 +3,6 @@
 # 0 "<built-in>"
 # 0 "<command-line>"
 # 1 "E:/GitHub/Kronos Engine/tests/core/math.cpp"
-# 1 "E:/GitHub/Kronos Engine/include/core/math/vector.hpp" 1
-       
-
-namespace Kronos::CoreSystems::Math
-{
-    struct Vector3D
-    {
-        float x, y, z;
-
-        Vector3D() = default;
-        Vector3D(const float x, const float y, const float z) : x(x), y(y), z(z) {}
-
-        float& operator[](int index);
-        const float& operator[](int index) const;
-
-        Vector3D operator*(float scalar) const;
-        Vector3D operator/(float scalar) const;
-        Vector3D operator*=(float scalar);
-        Vector3D operator/=(float scalar);
-        Vector3D operator+(const Vector3D& vector) const;
-        Vector3D operator-(const Vector3D& vector) const;
-        Vector3D operator-() const;
-        Vector3D operator+=(const Vector3D& vector);
-        Vector3D operator-=(const Vector3D& vector);
-
-        float magnitude() const;
-        Vector3D normalized() const;
-        void normalize();
-
-        float dot(const Vector3D& vector) const;
-        Vector3D cross(const Vector3D& vector) const;
-
-        Vector3D project(const Vector3D& vector) const;
-        Vector3D reject(const Vector3D& vector) const;
-
-        void zero();
-    };
-}
-# 2 "E:/GitHub/Kronos Engine/tests/core/math.cpp" 2
 # 1 "E:/msys64/mingw64/include/c++/14.2.0/iostream" 1 3
 # 36 "E:/msys64/mingw64/include/c++/14.2.0/iostream" 3
        
@@ -41512,67 +41473,123 @@ namespace std
 # 85 "E:/msys64/mingw64/include/c++/14.2.0/iostream" 3
 
 }
-# 3 "E:/GitHub/Kronos Engine/tests/core/math.cpp" 2
+# 2 "E:/GitHub/Kronos Engine/tests/core/math.cpp" 2
+
+# 1 "E:/GitHub/Kronos Engine/include/core/math/vector.hpp" 1
+       
+
+
+# 3 "E:/GitHub/Kronos Engine/include/core/math/vector.hpp"
+namespace Kronos::CoreSystems::Math
+{
+    struct Vector3
+    {
+        float x, y, z;
+
+        Vector3();
+        Vector3(float x, float y, float z);
+
+        float& operator[](int i);
+        const float& operator[](int i) const;
+
+        Vector3 operator+(const Vector3& v) const;
+        Vector3 operator-(const Vector3& v) const;
+        Vector3 operator*(float s) const;
+        Vector3 operator/(float s) const;
+        Vector3 operator-() const;
+        Vector3 operator+=(const Vector3& v);
+        Vector3 operator-=(const Vector3& v);
+        Vector3 operator*=(float s);
+        Vector3 operator/=(float s);
+
+        float magnitude() const;
+        void normalize();
+    };
+
+    float dot(const Vector3& a, const Vector3& b);
+    Vector3 cross(const Vector3& a, const Vector3& b);
+
+    Vector3 project(const Vector3& a, const Vector3& b);
+    Vector3 reject(const Vector3& a, const Vector3& b);
+}
+# 4 "E:/GitHub/Kronos Engine/tests/core/math.cpp" 2
 # 1 "E:/GitHub/Kronos Engine/include/core/math/matrix.hpp" 1
+       
+
+namespace Kronos::CoreSystems::Math
+{
+    struct Matrix3x3
+    {
+    private:
+        float m[3][3];
+    public:
+        Matrix3x3();
+        Matrix3x3(float m00, float m01, float m02, float m10, float m11, float m12, float m20, float m21, float m22);
+
+        float& operator()(int i, int j);
+        const float& operator()(int i, int j) const;
+
+        Matrix3x3 operator*(const Matrix3x3& m) const;
+        Matrix3x3 operator*=(const Matrix3x3& m);
+
+        float determinant() const;
+
+    };
+
+    Matrix3x3 makeXAxisRotationMatrix(float t);
+    Matrix3x3 makeYAxisRotationMatrix(float t);
+    Matrix3x3 makeZAxisRotationMatrix(float t);
+}
+# 5 "E:/GitHub/Kronos Engine/tests/core/math.cpp" 2
+# 1 "E:/GitHub/Kronos Engine/include/core/math/common.hpp" 1
        
 
 
 
-# 4 "E:/GitHub/Kronos Engine/include/core/math/matrix.hpp"
+# 1 "E:/GitHub/Kronos Engine/include/core/math/quaternion.hpp" 1
+       
+
+
 namespace Kronos::CoreSystems::Math
 {
-    struct Matrix3D
+    struct Quaternion
     {
-    private:
-        float n[3][3];
+        float x, y, z, w;
 
-    public:
-        Matrix3D() = default;
-        Matrix3D(float n00, float n01, float n02,
-                 float n10, float n11, float n12,
-                 float n20, float n21, float n22);
-        Matrix3D(const Vector3D& vector_a, const Vector3D& vector_b, const Vector3D& vector_c);
+        Quaternion();
+        Quaternion(float x, float y, float z);
+        Quaternion(float x, float y, float z, float w);
 
-        float& operator()(int index_x, int index_y);
-        const float& operator()(int index_x, int index_y) const;
-        Vector3D& operator[](int index_y);
-        const Vector3D& operator[](int index_y) const;
+        float& operator[](int i);
+        const float& operator[](int i) const;
 
-        Matrix3D operator*(const Matrix3D& matrix);
-        Vector3D operator*(const Vector3D& vector);
-        Matrix3D operator-();
+        Quaternion operator*(const Quaternion& q) const;
+        Quaternion& operator*=(const Quaternion& q);
 
-        float determinant();
-        Matrix3D inverse();
-
-        void zero();
-
-        void rotateX(float angle);
-        void rotateY(float angle);
-        void rotateZ(float angle);
-        void rotate(float angle, const Vector3D& axis);
-
-        void reflect(const Vector3D& vector);
-
-        void involution(const Vector3D& vector);
-
-        void scale(float x, float y, float z);
-        void scale(float scale, const Vector3D& axis);
-
-        void skew(float angle, const Vector3D& vector_a, const Vector3D& vector_b);
+        Matrix3x3 getRotationMatrix() const;
+        void setRotationMatrix(const Matrix3x3& m);
     };
 }
-# 4 "E:/GitHub/Kronos Engine/tests/core/math.cpp" 2
+# 6 "E:/GitHub/Kronos Engine/include/core/math/common.hpp" 2
 
-using namespace Kronos::CoreSystems::Math;
+namespace Kronos::CoreSystems::Math
+{
+    Vector3 operator*(const Vector3& v, const Matrix3x3& m);
+    Vector3 operator*(const Matrix3x3& m, const Vector3& v);
+    Vector3 operator*=(Vector3& v, const Matrix3x3& m);
+
+    Matrix3x3 operator-(const Matrix3x3& m);
+
+    Vector3 operator*(const Vector3& v, const Quaternion& q);
+    Vector3 operator*=(Vector3& v, const Quaternion& q);
+
+    float radians(float t);
+    float degrees(float t);
+}
+# 6 "E:/GitHub/Kronos Engine/tests/core/math.cpp" 2
+
 
 int main()
 {
-    const auto vec = Vector3D(0.0, 1.0, 0.0);
-    auto mat = Matrix3D();
-    mat.rotateX(90.0f);
-    const Vector3D vec2 = mat * vec;
-    std::cout << vec2.x << std::endl;
-    std::cout << vec2.y << std::endl;
-    std::cout << vec2.z << std::endl;
+
 }

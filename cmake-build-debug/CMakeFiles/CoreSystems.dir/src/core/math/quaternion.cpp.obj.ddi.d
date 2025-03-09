@@ -1,5 +1,6 @@
-CMakeFiles\CoreSystems.dir\src\core\math\matrix.cpp.obj.ddi: \
- E:/GitHub/Kronos\ Engine/src/core/math/matrix.cpp \
+CMakeFiles\CoreSystems.dir\src\core\math\quaternion.cpp.obj.ddi: \
+ E:/GitHub/Kronos\ Engine/src/core/math/quaternion.cpp \
+ E:/GitHub/Kronos\ Engine/include/core/math/quaternion.hpp \
  E:/GitHub/Kronos\ Engine/include/core/math/matrix.hpp \
  E:/msys64/mingw64/include/c++/14.2.0/cmath \
  E:/msys64/mingw64/include/c++/14.2.0/bits/requires_hosted.h \

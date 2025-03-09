@@ -1,46 +1,26 @@
 #pragma once
-#include <vector.hpp>
 
 namespace Kronos::CoreSystems::Math
 {
-    struct Matrix3D
+    struct Matrix3x3
     {
     private:
-        float n[3][3];
-
+        float m[3][3];
     public:
-        Matrix3D() = default;
-        Matrix3D(float n00, float n01, float n02,
-                 float n10, float n11, float n12,
-                 float n20, float n21, float n22);
-        Matrix3D(const Vector3D& vector_a, const Vector3D& vector_b, const Vector3D& vector_c);
+        Matrix3x3();
+        Matrix3x3(float m00, float m01, float m02, float m10, float m11, float m12, float m20, float m21, float m22);
 
-        float& operator()(int index_x, int index_y);
-        const float& operator()(int index_x, int index_y) const;
-        Vector3D& operator[](int index_y);
-        const Vector3D& operator[](int index_y) const;
+        float& operator()(int i, int j);
+        const float& operator()(int i, int j) const;
 
-        Matrix3D operator*(const Matrix3D& matrix);
-        Vector3D operator*(const Vector3D& vector);
-        Matrix3D operator-();
+        Matrix3x3 operator*(const Matrix3x3& m) const;
+        Matrix3x3 operator*=(const Matrix3x3& m);
 
-        float determinant();
-        Matrix3D inverse();
+        float determinant() const;
 
-        void zero();
-
-        void rotateX(float angle);
-        void rotateY(float angle);
-        void rotateZ(float angle);
-        void rotate(float angle, const Vector3D& axis);
-
-        void reflect(const Vector3D& vector);
-
-        void involution(const Vector3D& vector);
-
-        void scale(float x, float y, float z);
-        void scale(float scale, const Vector3D& axis);
-
-        void skew(float angle, const Vector3D& vector_a, const Vector3D& vector_b);
     };
+
+    Matrix3x3 makeXAxisRotationMatrix(float t);
+    Matrix3x3 makeYAxisRotationMatrix(float t);
+    Matrix3x3 makeZAxisRotationMatrix(float t);
 }

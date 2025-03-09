@@ -3,3 +3,7 @@ build CMakeFiles/CoreSystems.dir/src/core/math/vector.cpp.obj: dyndep
 
 build CMakeFiles/CoreSystems.dir/src/core/math/matrix.cpp.obj: dyndep
 
+build CMakeFiles/CoreSystems.dir/src/core/math/quaternion.cpp.obj: dyndep
+
+build CMakeFiles/CoreSystems.dir/src/core/math/common.cpp.obj: dyndep
+
