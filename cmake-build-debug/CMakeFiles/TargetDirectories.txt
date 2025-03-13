@@ -1,4 +1,0 @@
-E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/CoreSystems.dir
-E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/CoreSystemsMathTest.dir
-E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
