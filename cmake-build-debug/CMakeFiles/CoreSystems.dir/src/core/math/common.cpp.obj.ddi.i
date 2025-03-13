@@ -104,6 +104,13 @@ namespace Kronos::CoreSystems::Math
 
     Matrix3x3 operator-(const Matrix3x3& m);
 
+    Matrix3x3 makeRotationMatrix(float t, const Vector3& a);
+    Matrix3x3 makeReflectionMatrix(const Vector3& v);
+    Matrix3x3 makeSkewMatrix(float t, const Vector3& a, const Vector3& b);
+    Matrix3x3 makeScaleMatrix(float s, const Vector3& v);
+    Matrix3x3 makeScaleMatrix(float sx, float sy, float sz);
+    Matrix3x3 makeInvolutionMatrix(const Vector3& v);
+
     Vector3 operator*(const Vector3& v, const Quaternion& q);
     Vector3 operator*=(Vector3& v, const Quaternion& q);
 
@@ -22028,6 +22035,105 @@ namespace Kronos::CoreSystems::Math
         };
     }
 
+    Matrix3x3 makeRotationMatrix(float t, const Vector3& a)
+    {
+        const float r = t * (
+# 52 "E:/GitHub/Kronos Engine/src/core/math/common.cpp" 3
+                            3.14159265358979323846 
+# 52 "E:/GitHub/Kronos Engine/src/core/math/common.cpp"
+                                 / 180.0f);
+        const float c = std::cos(r);
+        const float s = std::sin(r);
+        const float d = 1.0f - c;
+
+        const float x = a.x * d;
+        const float y = a.y * d;
+        const float z = a.z * d;
+        const float axay = x * a.y;
+        const float axaz = x * a.z;
+        const float ayaz = y * a.z;
+
+        return {
+            c + x * a.x, axay -s * a.z, axaz + s * a.y,
+            axay + s * a.z, c + y * a.y, axaz - s * a.x,
+            axaz - s * a.y, ayaz + s * a.x, c + z * a.z,
+        };
+    }
+
+    Matrix3x3 makeReflectionMatrix(const Vector3& v)
+    {
+        const float x = v.x * -2.0f;
+        const float y = v.y * -2.0f;
+        const float z = v.z * -2.0f;
+        const float axay = x * v.y;
+        const float axaz = x * v.z;
+        const float ayaz = y * v.z;
+
+        return {
+            x * v.x + 1.0f, axay, axaz,
+            axay, y * v.y + 1.0f, ayaz,
+            axaz, ayaz, z * v.z + 1.0f
+        };
+    };
+
+    Matrix3x3 makeSkewMatrix(const float t, const Vector3& a, const Vector3& b)
+    {
+        const float r = t * (
+# 89 "E:/GitHub/Kronos Engine/src/core/math/common.cpp" 3
+                            3.14159265358979323846 
+# 89 "E:/GitHub/Kronos Engine/src/core/math/common.cpp"
+                                 / 180.0f);
+        const float tan = std::tan(r);
+        const float x = a.x * tan;
+        const float y = a.y * tan;
+        const float z = a.z * tan;
+
+        return {
+            x * b.x + 1.0f, x * b.y, x * b.z,
+            y * b.x, y * b.y + 1.0f, y * b.z,
+            z * b.x, y * b.y, z * b.z + 1.0f
+        };
+    }
+    Matrix3x3 makeScaleMatrix(const float s, const Vector3& v)
+    {
+        const float t = s - 1.0f;
+        const float x = v.x * t;
+        const float y = v.y * t;
+        const float z = v.z * t;
+        const float axay = x * v.y;
+        const float axaz = x * v.z;
+        const float ayaz = y * v.z;
+
+        return {
+            x * v.x + 1.0f, axay, axaz,
+            axay, y * v.y + 1.0f, ayaz,
+            axaz, ayaz, z * v.x + 1.0f
+        };
+    }
+    Matrix3x3 makeScaleMatrix(float sx, float sy, float sz)
+    {
+        return {
+            sx, 0.0f, 0.0f,
+            0.0f, sy, 0.0f,
+            0.0f, 0.0f, sz
+        };
+    }
+    Matrix3x3 makeInvolutionMatrix(const Vector3& v)
+    {
+        const float x = v.x * 2.0f;
+        const float y = v.y * 2.0f;
+        const float z = v.z * 2.0f;
+        const float axay = x * v.y;
+        const float axaz = x * v.z;
+        const float ayaz = y * v.z;
+
+        return {
+            x * v.x - 1.0f, axay, axaz,
+            axay, y * v.y - 1.0f, ayaz,
+            axaz, ayaz, z * v.z - 1.0f
+        };
+    }
+
     Vector3 operator*(const Vector3& v, const Quaternion& q)
     {
         const auto a = Vector3(q.x, q.y, q.z);
@@ -22038,18 +22144,18 @@ namespace Kronos::CoreSystems::Math
     float radians(const float t)
     {
         return t * (
-# 59 "E:/GitHub/Kronos Engine/src/core/math/common.cpp" 3
+# 150 "E:/GitHub/Kronos Engine/src/core/math/common.cpp" 3
                    3.14159265358979323846 
-# 59 "E:/GitHub/Kronos Engine/src/core/math/common.cpp"
+# 150 "E:/GitHub/Kronos Engine/src/core/math/common.cpp"
                         / 180.0f);
     }
 
     float degrees(const float t)
     {
         return t * (180.0f / 
-# 64 "E:/GitHub/Kronos Engine/src/core/math/common.cpp" 3
+# 155 "E:/GitHub/Kronos Engine/src/core/math/common.cpp" 3
                             3.14159265358979323846
-# 64 "E:/GitHub/Kronos Engine/src/core/math/common.cpp"
+# 155 "E:/GitHub/Kronos Engine/src/core/math/common.cpp"
                                 );
     }
 

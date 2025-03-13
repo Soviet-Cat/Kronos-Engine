@@ -122,7 +122,7 @@ namespace Kronos::CoreSystems::Math
             0.0f, 0.0f, sz
         };
     }
-    Matrix3x3 makeInvolution(const Vector3& v)
+    Matrix3x3 makeInvolutionMatrix(const Vector3& v)
     {
         const float x = v.x * 2.0f;
         const float y = v.y * 2.0f;

@@ -17,7 +17,7 @@ namespace Kronos::CoreSystems::Math
     Matrix3x3 makeSkewMatrix(float t, const Vector3& a, const Vector3& b);
     Matrix3x3 makeScaleMatrix(float s, const Vector3& v);
     Matrix3x3 makeScaleMatrix(float sx, float sy, float sz);
-    Matrix3x3 makeInvolution(const Vector3& v);
+    Matrix3x3 makeInvolutionMatrix(const Vector3& v);
 
     Vector3 operator*(const Vector3& v, const Quaternion& q);
     Vector3 operator*=(Vector3& v, const Quaternion& q);

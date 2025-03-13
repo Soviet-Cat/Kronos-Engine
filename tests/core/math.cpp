@@ -1,12 +1,9 @@
-#include <iostream>
+#include "math.hpp"
 
-#include "vector.hpp"
-#include "matrix.hpp"
-#include "common.hpp"
-#include "quaternion.hpp"
+using namespace Kronos::CoreSystems::Math;
 
 int main()
 {
-
+    
 }
 
