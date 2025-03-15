@@ -1,0 +1,76 @@
+# ninja log v6
+10	32	7636523592080376	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.modmap	26dba8a0f7c45f92
+13	89	7636523365454120	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.ddi	bf4735b45ee1fd16
+10	32	7636523592080376	CMakeFiles/KronosCoreSystems.dir/CXX.dd	26dba8a0f7c45f92
+7	599	7636523953163397	build.ninja	d78e744289d7c622
+10	32	7636523592080376	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/KronosCoreSystems.dir/CXXModules.json	26dba8a0f7c45f92
+67	115	7636059431383143	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj	6bbb3f955dd1b712
+116	230	7636059432946332	E:/GitHub/Kronos Engine/bin/libKronosCoreSystems.dll	b0a5025383121668
+116	230	7636059432946332	E:/GitHub/Kronos Engine/lib/libKronosCoreSystems.dll.a	b0a5025383121668
+8	82	7636523972482385	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.ddi	b807931bf6a4fd23
+83	103	7636523973227412	CMakeFiles/KronosCoreSystems.dir/CXX.dd	26dba8a0f7c45f92
+83	103	7636523973227412	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/KronosCoreSystems.dir/CXXModules.json	26dba8a0f7c45f92
+83	103	7636523973227412	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.modmap	26dba8a0f7c45f92
+104	442	7636523973436805	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj	6bbb3f955dd1b712
+442	672	7636523979067907	E:/GitHub/Kronos Engine/bin/libKronosCoreSystems.dll	b0a5025383121668
+442	672	7636523979067907	E:/GitHub/Kronos Engine/lib/libKronosCoreSystems.dll.a	b0a5025383121668
+25	329	7636537652929036	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.ddi	b807931bf6a4fd23
+329	351	7636537655980219	CMakeFiles/KronosCoreSystems.dir/CXX.dd	26dba8a0f7c45f92
+329	351	7636537655980219	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/KronosCoreSystems.dir/CXXModules.json	26dba8a0f7c45f92
+329	351	7636537655980219	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.modmap	26dba8a0f7c45f92
+352	592	7636537656198192	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj	6bbb3f955dd1b712
+593	872	7636537661345667	E:/GitHub/Kronos Engine/bin/libKronosCoreSystems.dll	b0a5025383121668
+593	872	7636537661345667	E:/GitHub/Kronos Engine/lib/libKronosCoreSystems.dll.a	b0a5025383121668
+14	92	7636538815882466	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.ddi	b807931bf6a4fd23
+92	111	7636538816662502	CMakeFiles/KronosCoreSystems.dir/CXX.dd	26dba8a0f7c45f92
+92	111	7636538816662502	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/KronosCoreSystems.dir/CXXModules.json	26dba8a0f7c45f92
+92	111	7636538816662502	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.modmap	26dba8a0f7c45f92
+112	297	7636538816857806	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj	6bbb3f955dd1b712
+297	374	7636538819420688	E:/GitHub/Kronos Engine/bin/libKronosCoreSystems.dll	b0a5025383121668
+297	374	7636538819420688	E:/GitHub/Kronos Engine/lib/libKronosCoreSystems.dll.a	b0a5025383121668
+21	321	7636619763456472	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.ddi	b807931bf6a4fd23
+321	341	7636619766462551	CMakeFiles/KronosCoreSystems.dir/CXX.dd	26dba8a0f7c45f92
+321	341	7636619766462551	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/KronosCoreSystems.dir/CXXModules.json	26dba8a0f7c45f92
+321	341	7636619766462551	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.modmap	26dba8a0f7c45f92
+341	584	7636619766668879	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj	6bbb3f955dd1b712
+585	858	7636619771767319	E:/GitHub/Kronos Engine/bin/libKronosCoreSystems.dll	b0a5025383121668
+585	858	7636619771767319	E:/GitHub/Kronos Engine/lib/libKronosCoreSystems.dll.a	b0a5025383121668
+15	91	7636623531172080	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.ddi	b807931bf6a4fd23
+91	110	7636623531939962	CMakeFiles/KronosCoreSystems.dir/CXX.dd	26dba8a0f7c45f92
+91	110	7636623531939962	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/KronosCoreSystems.dir/CXXModules.json	26dba8a0f7c45f92
+91	110	7636623531939962	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.modmap	26dba8a0f7c45f92
+111	313	7636623532136979	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj	6bbb3f955dd1b712
+313	388	7636623534840090	E:/GitHub/Kronos Engine/bin/libKronosCoreSystems.dll	b0a5025383121668
+313	388	7636623534840090	E:/GitHub/Kronos Engine/lib/libKronosCoreSystems.dll.a	b0a5025383121668
+16	92	7636634700180933	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.ddi	b807931bf6a4fd23
+92	111	7636634700929163	CMakeFiles/KronosCoreSystems.dir/CXX.dd	26dba8a0f7c45f92
+92	111	7636634700929163	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/KronosCoreSystems.dir/CXXModules.json	26dba8a0f7c45f92
+92	111	7636634700929163	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.modmap	26dba8a0f7c45f92
+41	494	7636955304737356	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.ddi	b807931bf6a4fd23
+494	531	7636955309272934	CMakeFiles/KronosCoreSystems.dir/CXX.dd	26dba8a0f7c45f92
+494	531	7636955309272934	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/KronosCoreSystems.dir/CXXModules.json	26dba8a0f7c45f92
+494	531	7636955309272934	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.modmap	26dba8a0f7c45f92
+535	862	7636955309685094	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj	6bbb3f955dd1b712
+862	1268	7636955316947053	E:/GitHub/Kronos Engine/bin/libKronosCoreSystems.dll	b0a5025383121668
+862	1268	7636955316947053	E:/GitHub/Kronos Engine/lib/libKronosCoreSystems.dll.a	b0a5025383121668
+3	86	7636972883004236	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.ddi	b807931bf6a4fd23
+87	111	7636972883841448	CMakeFiles/KronosCoreSystems.dir/CXX.dd	26dba8a0f7c45f92
+87	111	7636972883841448	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/KronosCoreSystems.dir/CXXModules.json	26dba8a0f7c45f92
+87	111	7636972883841448	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.modmap	26dba8a0f7c45f92
+112	337	7636972884092360	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj	6bbb3f955dd1b712
+337	421	7636972887114477	E:/GitHub/Kronos Engine/bin/libKronosCoreSystems.dll	b0a5025383121668
+337	421	7636972887114477	E:/GitHub/Kronos Engine/lib/libKronosCoreSystems.dll.a	b0a5025383121668
+10	85	7636984290626860	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.ddi	b807931bf6a4fd23
+86	108	7636984291392105	CMakeFiles/KronosCoreSystems.dir/CXX.dd	26dba8a0f7c45f92
+86	108	7636984291392105	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/KronosCoreSystems.dir/CXXModules.json	26dba8a0f7c45f92
+86	108	7636984291392105	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.modmap	26dba8a0f7c45f92
+109	321	7636984291623016	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj	6bbb3f955dd1b712
+321	397	7636984294434031	E:/GitHub/Kronos Engine/bin/libKronosCoreSystems.dll	b0a5025383121668
+321	397	7636984294434031	E:/GitHub/Kronos Engine/lib/libKronosCoreSystems.dll.a	b0a5025383121668
+9	87	7636990909151056	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.ddi	b807931bf6a4fd23
+87	108	7636990909928361	CMakeFiles/KronosCoreSystems.dir/CXX.dd	26dba8a0f7c45f92
+87	108	7636990909928361	E:/GitHub/Kronos Engine/cmake-build-debug/CMakeFiles/KronosCoreSystems.dir/CXXModules.json	26dba8a0f7c45f92
+87	108	7636990909928361	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj.modmap	26dba8a0f7c45f92
+109	326	7636990910146738	CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.obj	6bbb3f955dd1b712
+326	403	7636990913031491	E:/GitHub/Kronos Engine/bin/libKronosCoreSystems.dll	b0a5025383121668
+326	403	7636990913031491	E:/GitHub/Kronos Engine/lib/libKronosCoreSystems.dll.a	b0a5025383121668

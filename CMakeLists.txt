@@ -17,27 +17,14 @@ set(THIRD_PARTY_DIR "${CMAKE_CURRENT_SOURCE_DIR}/third_party")
 set(TEST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tests")
 
 # create core library
-#add_library(CoreSystems SHARED
-#        # math
-#        "${SOURCE_DIR}/core/math/vector.cpp"
-#        "${SOURCE_DIR}/core/math/matrix.cpp"
-#        "${SOURCE_DIR}/core/math/quaternion.cpp"
-#        "${SOURCE_DIR}/core/math/common.cpp"
-#)
-#set_target_properties(CoreSystems PROPERTIES
-#        RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
-#        LIBRARY_OUTPUT_DIRECTORY ${LIB_DIR}
-#        ARCHIVE_OUTPUT_DIRECTORY ${LIB_DIR}
-#)
-#target_include_directories(CoreSystems PUBLIC
-#        # math
-#        "${INCLUDE_DIR}/core/math"
-#)
-
-# create core library tests
-#add_executable(CoreSystemsMathTest "${TEST_DIR}/core/math.cpp")
-#set_target_properties(CoreSystemsMathTest PROPERTIES
-#        RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
-#)
-#target_include_directories(CoreSystemsMathTest PUBLIC "${INCLUDE_DIR}/core/math")
-#target_link_libraries(CoreSystemsMathTest CoreSystems)
+add_library(KronosCoreSystems SHARED
+        "${SOURCE_DIR}/core/math.cpp"
+)
+set_target_properties(KronosCoreSystems PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
+        LIBRARY_OUTPUT_DIRECTORY ${LIB_DIR}
+        ARCHIVE_OUTPUT_DIRECTORY ${LIB_DIR}
+)
+target_include_directories(KronosCoreSystems PUBLIC
+        "${INCLUDE_DIR}/core"
+)

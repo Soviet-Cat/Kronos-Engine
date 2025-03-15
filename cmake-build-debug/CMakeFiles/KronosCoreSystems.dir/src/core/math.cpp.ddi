@@ -1,0 +1,11 @@
+{
+"rules": [
+{
+"primary-output": "CMakeFiles/KronosCoreSystems.dir/src/core/math.cpp.o",
+"requires": [
+]
+}
+],
+"version": 0,
+"revision": 0
+}
